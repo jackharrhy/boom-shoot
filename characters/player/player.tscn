@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf4c2ah8ww4iu"]
+[gd_scene load_steps=6 format=3 uid="uid://cf4c2ah8ww4iu"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_ehpgr"]
 [ext_resource type="PackedScene" uid="uid://16wrra566ksf" path="res://characters/character_mover.tscn" id="2_f7piv"]
+[ext_resource type="PackedScene" uid="uid://d3beufog75p3q" path="res://characters/health_manager.tscn" id="3_asjco"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x5mne"]
 
@@ -24,3 +25,5 @@ mesh = SubResource("CapsuleMesh_1fdik")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_f7piv")]
+
+[node name="HealthManager" parent="." instance=ExtResource("3_asjco")]

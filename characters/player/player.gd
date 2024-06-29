@@ -12,7 +12,8 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity_h
-		camera_3d.rotation_degrees.x -= clamp(event.relative.y * mouse_sensitivity_v, -90, 90)
+		camera_3d.rotation_degrees.x -= event.relative.y * mouse_sensitivity_v
+		camera_3d.rotation_degrees.x = clamp(camera_3d.rotation_degrees.x, -90, 90)
 
 func _process(delta):
 	if Input.is_action_just_pressed("quit"):

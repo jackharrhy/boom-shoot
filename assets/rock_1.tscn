@@ -7,6 +7,9 @@ data = PackedVector3Array(1.0472, 1, -1.0354, -1.0532, 1, 1.059, -1.0414, 1, -1.
 
 [node name="rock1" instance=ExtResource("1_twvq5")]
 
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000184536, 0.00681639, -0.00449026)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
