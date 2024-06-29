@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://d03bdewlgmodk"]
+
+[ext_resource type="PackedScene" uid="uid://cxkkutxdchp6j" path="res://assets/floor_1.tscn" id="1_r5g5k"]
+[ext_resource type="PackedScene" uid="uid://cf4c2ah8ww4iu" path="res://characters/player/player.tscn" id="3_qu3ni"]
+[ext_resource type="PackedScene" uid="uid://4as6sx4h1lyv" path="res://assets/rock_1.tscn" id="4_kmljg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1lwu7"]
+
+[sub_resource type="Sky" id="Sky_q4rli"]
+sky_material = SubResource("ProceduralSkyMaterial_1lwu7")
+
+[sub_resource type="Environment" id="Environment_a6qxf"]
+background_mode = 2
+sky = SubResource("Sky_q4rli")
+
+[node name="Main" type="Node3D"]
+
+[node name="enviroment" type="Node3D" parent="."]
+transform = Transform3D(3.21386, 0, 0, 0, 3.21386, 0, 0, 0, 3.21386, 2.47955e-05, -0.973899, -0.0137062)
+
+[node name="floor1" parent="enviroment" instance=ExtResource("1_r5g5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="rock1" parent="enviroment" instance=ExtResource("4_kmljg")]
+transform = Transform3D(0.912105, 0.0728321, -0.403435, -0.128747, 0.985193, -0.113221, 0.389215, 0.15521, 0.907976, 0.593234, 0.169208, -2.06683)
+
+[node name="rock2" parent="enviroment" instance=ExtResource("4_kmljg")]
+transform = Transform3D(2.13811, 0, -0.0445805, 0, 1, 0, 0.211226, 0, 0.45126, 4.91934, 0.995228, -4.99434)
+
+[node name="rock3" parent="enviroment" instance=ExtResource("4_kmljg")]
+transform = Transform3D(3.64432, -0.0907998, 0.0400368, 0.220951, 1.50798, -0.00106035, -0.252283, 0.00906506, 0.577419, -0.73742, 0.995228, -4.99434)
+
+[node name="rock6" parent="enviroment" instance=ExtResource("4_kmljg")]
+transform = Transform3D(0.34569, -0.0113914, -0.576202, -0.0939842, 1.51017, -0.00579279, 3.64215, 0.0400506, 0.0545399, 7.20162, 0.621045, -0.9313)
+
+[node name="rock7" parent="enviroment" instance=ExtResource("4_kmljg")]
+transform = Transform3D(-2.79439, -0.0581107, -0.365275, -0.0928543, 2.21687, -0.00576565, 2.29264, 0.0189574, -0.44545, 5.57704, 0.836064, 4.19279)
+
+[node name="rock8" parent="enviroment" instance=ExtResource("4_kmljg")]
+transform = Transform3D(-3.61125, -0.0559516, 0.024704, -0.107829, 2.20325, -0.0634184, -0.143994, -0.246668, -0.57206, 2.33611, 0.468099, 5.33248)
+
+[node name="rock4" parent="enviroment" instance=ExtResource("4_kmljg")]
+transform = Transform3D(1.0742, -0.0241705, 0.553234, -0.204744, 1.50751, 0.0196116, -3.49253, -0.0958096, 0.169009, -2.67298, 0.858265, -2.76179)
+
+[node name="rock5" parent="enviroment" instance=ExtResource("4_kmljg")]
+transform = Transform3D(-1.90132, -0.260701, 0.434504, 0.118477, 2.37894, 0.0742367, -3.1678, 0.245447, -0.258014, -1.8596, 1.84477, 3.12485)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a6qxf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.13265, 0.788433, -0.600647, -0.337582, 0.533832, 0.775282, 0.931903, 0.305608, 0.195348, 0, 4, -4)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("3_qu3ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33355, 0, 0)
